@@ -1,5 +1,8 @@
 package com.tutorialsninja.testcases;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -46,41 +49,41 @@ public class CompleteCheckoutTest extends TestBase {
 		productpage.verifyValidProductPresence();
 		//click on 'add to cart' button (on ProductPage)
 		addtocartpage = productpage.clickOnAddToCartButtonOnProductPage();
-		Assert.assertTrue(addtocartpage.displayStatusOfLaptopPrice());
+		AssertJUnit.assertTrue(addtocartpage.displayStatusOfLaptopPrice());
 		addtocartpage.clickOnAddToCartButton();
-		Assert.assertTrue(addtocartpage.actualProductAddedSuccessMessage().contains(dataprop.getProperty("expectedProductAddedSuccessMessage")));
-		Assert.assertTrue(addtocartpage.verifyDisplayOfCartButtonWithItemsAndTotalPriceShowing());
+		AssertJUnit.assertTrue(addtocartpage.actualProductAddedSuccessMessage().contains(dataprop.getProperty("expectedProductAddedSuccessMessage")));
+		AssertJUnit.assertTrue(addtocartpage.verifyDisplayOfCartButtonWithItemsAndTotalPriceShowing());
 		addtocartpage.clickOnAddToCartButton();
 		
 		//Assert.assertTrue(driver.findElement(By.xpath("//p/a/strong/text()[contains(., 'View Cart')]")).isDisplayed());
 		//click on 'View Cart' link on DropDown of Cart Button
 		
 		driver.findElement(By.xpath("//a[@title = 'Shopping Cart']")).click();
-		Assert.assertTrue(driver.findElement(By.xpath("//div/a[text() = 'Checkout']")).isDisplayed());
+		AssertJUnit.assertTrue(driver.findElement(By.xpath("//div/a[text() = 'Checkout']")).isDisplayed());
 		driver.findElement(By.xpath("//div/a[text() = 'Checkout']")).click();
 		
 		loginutil = new LoginUtil(driver);
 		loginutil.loginWithValidCredentials(configprop.getProperty("validEmail"), configprop.getProperty("validPassword"));
 		
-		Assert.assertTrue(driver.findElement(By.xpath("//input[@name = 'payment_address' and @value = 'existing']")).isSelected());
+		AssertJUnit.assertTrue(driver.findElement(By.xpath("//input[@name = 'payment_address' and @value = 'existing']")).isSelected());
 		driver.findElement(By.cssSelector("#button-payment-address")).click();
 		
-		Assert.assertTrue(driver.findElement(By.xpath("//input[@name = 'shipping_address' and @value = 'existing']")).isSelected());
+		AssertJUnit.assertTrue(driver.findElement(By.xpath("//input[@name = 'shipping_address' and @value = 'existing']")).isSelected());
 		driver.findElement(By.cssSelector("#button-shipping-address")).click();
 		
-		Assert.assertTrue(driver.findElement(By.xpath("//input[@name = 'shipping_method']")).isSelected());
+		AssertJUnit.assertTrue(driver.findElement(By.xpath("//input[@name = 'shipping_method']")).isSelected());
 		driver.findElement(By.cssSelector("#button-shipping-method")).click();
 
-		Assert.assertTrue(driver.findElement(By.xpath("//input[@name = 'payment_method' and @value = 'cod']")).isSelected());
+		AssertJUnit.assertTrue(driver.findElement(By.xpath("//input[@name = 'payment_method' and @value = 'cod']")).isSelected());
 		driver.findElement(By.cssSelector("input[name = 'agree']")).click();
 		
-		Assert.assertTrue(driver.findElement(By.cssSelector("div>#button-payment-method")).isDisplayed());
+		AssertJUnit.assertTrue(driver.findElement(By.cssSelector("div>#button-payment-method")).isDisplayed());
 		driver.findElement(By.cssSelector("div>#button-payment-method")).click();
 		
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("div>#button-confirm")))).click();
 		
-		Assert.assertTrue(driver.findElement(By.xpath("//p[text() = 'Your order has been successfully processed!']")).isDisplayed());
+		AssertJUnit.assertTrue(driver.findElement(By.xpath("//p[text() = 'Your order has been successfully processed!']")).isDisplayed());
 		
 	}
 	
@@ -123,9 +126,6 @@ public class CompleteCheckoutTest extends TestBase {
 		
 		
 	}
-	
-	
-	
 	
 	@AfterMethod
 	public void tearDown() {

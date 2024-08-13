@@ -1,5 +1,8 @@
 package com.tutorialsninja.testcases;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,7 +35,7 @@ public class SearchProductTest extends TestBase {
 	public void verifySearchWithValidProduct() {
 		homepage = new HomePage(driver);
 		productpage = homepage.navigateToProductPage(dataprop.getProperty("validProduct"));
-		Assert.assertTrue(productpage.verifyValidProductPresence());
+		AssertJUnit.assertTrue(productpage.verifyValidProductPresence());
 	}
 
 	@Test(priority = 2)
@@ -41,7 +44,7 @@ public class SearchProductTest extends TestBase {
 		productpage = new ProductPage(driver);
 		homepage.enterProductName(dataprop.getProperty("invalidProduct"));
 		homepage.clickOnSearchButton();
-		Assert.assertTrue(productpage.verifyInvalidProductWarningMessageDisplay());
+		AssertJUnit.assertTrue(productpage.verifyInvalidProductWarningMessageDisplay());
 	}
 
 	@Test(priority = 3)
@@ -50,7 +53,7 @@ public class SearchProductTest extends TestBase {
 		productpage = new ProductPage(driver);
 		
 		homepage.clickOnSearchButton();
-		Assert.assertTrue(productpage.verifyInvalidProductWarningMessageDisplay());
+		AssertJUnit.assertTrue(productpage.verifyInvalidProductWarningMessageDisplay());
 	}
 
 	@AfterMethod

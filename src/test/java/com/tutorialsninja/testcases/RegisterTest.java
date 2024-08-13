@@ -1,5 +1,8 @@
 package com.tutorialsninja.testcases;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -31,7 +34,7 @@ public class RegisterTest extends TestBase {
 		homepage.clickOnRegisterOption();
 
 		registerpage = new RegisterPage(driver);
-		Assert.assertTrue(registerpage.registerFormDisplayStatus());
+		AssertJUnit.assertTrue(registerpage.registerFormDisplayStatus());
 	}
 
 	@Test(priority = 1, dataProvider = "TNRegister", dataProviderClass = ExcelUtil.class, enabled = false)
@@ -41,7 +44,7 @@ public class RegisterTest extends TestBase {
 		accountsuccesspage = registerpage.fillingMandatoryDetailsToNavigateToAccountSuccessPage(firstname, lastname,
 				Utils.emailWithDateTimeStamp(), telephone, password, confirmpassword);
 		
-		Assert.assertTrue(accountsuccesspage.validateAccountSuccessCreatedMessage());
+		AssertJUnit.assertTrue(accountsuccesspage.validateAccountSuccessCreatedMessage());
 
 	}
 
@@ -52,7 +55,7 @@ public class RegisterTest extends TestBase {
 				dataprop.getProperty("lastname"), Utils.emailWithDateTimeStamp(), dataprop.getProperty("telephone"), configprop.getProperty("validPassword"), 
 				configprop.getProperty("validPassword"));
 		
-		Assert.assertTrue(accountsuccesspage.validateAccountSuccessCreatedMessage());
+		AssertJUnit.assertTrue(accountsuccesspage.validateAccountSuccessCreatedMessage());
 	}
 
 	@Test(priority = 3)
@@ -63,7 +66,7 @@ public class RegisterTest extends TestBase {
 				dataprop.getProperty("telephone"), configprop.getProperty("validPassword"),
 				configprop.getProperty("validPassword"));
 
-		Assert.assertTrue(dataprop.getProperty("existingEmailWarningMessage")
+		AssertJUnit.assertTrue(dataprop.getProperty("existingEmailWarningMessage")
 				.contains(registerpage.retrieveDuplicateEmailWarningMessage()));
 	}
 
@@ -74,7 +77,7 @@ public class RegisterTest extends TestBase {
 				dataprop.getProperty("lastname"), Utils.emailWithDateTimeStamp(), dataprop.getProperty("telephone"),
 				configprop.getProperty("validPassword"), dataprop.getProperty("invalidPassword"));
 
-		Assert.assertTrue(registerpage.retrieveWrongConfirmPasswordWarningMessage()
+		AssertJUnit.assertTrue(registerpage.retrieveWrongConfirmPasswordWarningMessage()
 				.contains(dataprop.getProperty("wrongconfirmPasswordWarning")));
 
 	}
@@ -83,7 +86,7 @@ public class RegisterTest extends TestBase {
 	public void verifyRegisterWithNoDetails() {
 
 		registerpage.clickOnContinueButton();
-		Assert.assertTrue(registerpage.retrieveAllWarningMessages(dataprop.getProperty("privacyPolicyWarningMessage"),
+		AssertJUnit.assertTrue(registerpage.retrieveAllWarningMessages(dataprop.getProperty("privacyPolicyWarningMessage"),
 				dataprop.getProperty("firstnameWarningMessage"), dataprop.getProperty("lastnameWarningMessage"),
 				dataprop.getProperty("emailWarningMessage"), dataprop.getProperty("telephoneWarningMessage"),
 				dataprop.getProperty("passwordWarningMessage")));
@@ -97,7 +100,7 @@ public class RegisterTest extends TestBase {
 				dataprop.getProperty("telephone"), configprop.getProperty("validPassword"),
 				configprop.getProperty("validPassword"));
 
-		Assert.assertTrue(dataprop.getProperty("privacyPolicyWarningMessage").contains(registerpage.retrievePrivacyPolicyWarningMessage()));
+		AssertJUnit.assertTrue(dataprop.getProperty("privacyPolicyWarningMessage").contains(registerpage.retrievePrivacyPolicyWarningMessage()));
 	}
 
 	@AfterMethod

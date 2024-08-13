@@ -1,5 +1,8 @@
 package com.tutorialsninja.testcases;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -30,38 +33,38 @@ public class LoginTest extends TestBase {
 		homepage.navigateToHomePage();
 		
 		loginpage = new LoginPage(driver);
-		Assert.assertTrue(loginpage.returningCustomerHeadingDisplayStatus());
+		AssertJUnit.assertTrue(loginpage.returningCustomerHeadingDisplayStatus());
 	}
 
 	@Test(priority = 1)
 	public void verifyLoginWithValidCredentials() {
 		accountpage = loginpage.navigateToLoginPageByCombining3Actions(configprop.getProperty("validEmail"), configprop.getProperty("validPassword"));
-		Assert.assertTrue(accountpage.editAccountInfoLinkDisplayStatus());
+		AssertJUnit.assertTrue(accountpage.editAccountInfoLinkDisplayStatus());
 	}
 
 	@Test(priority = 2)
 	public void verifyLoginWithInalidCredentials() {
 		loginpage.navigateToLoginPageByCombining3Actions(Utils.emailWithDateTimeStamp(), dataprop.getProperty("invalidPassword"));
-		Assert.assertEquals(loginpage.retreiveLoginWarningMessageText(), dataprop.getProperty("loginWarningMessage"));
+		AssertJUnit.assertEquals(loginpage.retreiveLoginWarningMessageText(), dataprop.getProperty("loginWarningMessage"));
 	}
 
 	@Test(priority = 3)
 	public void verifyLoginWithValidEmailAndInvalidPassword() {
 		loginpage.navigateToLoginPageByCombining3Actions(configprop.getProperty("validEmail"), dataprop.getProperty("invalidPassword"));
-		Assert.assertEquals(loginpage.retreiveLoginWarningMessageText(), dataprop.getProperty("loginWarningMessage"));
+		AssertJUnit.assertEquals(loginpage.retreiveLoginWarningMessageText(), dataprop.getProperty("loginWarningMessage"));
 	}
 
 	@Test(priority = 4)
 	public void verifyLoginWithInvalidEmailAndValidPassword() {
 		loginpage.navigateToLoginPageByCombining3Actions(Utils.emailWithDateTimeStamp(), configprop.getProperty("validPassword"));
-		Assert.assertEquals(loginpage.retreiveLoginWarningMessageText(), dataprop.getProperty("loginWarningMessage"));
+		AssertJUnit.assertEquals(loginpage.retreiveLoginWarningMessageText(), dataprop.getProperty("loginWarningMessage"));
 	}
 
 	@Test(priority = 5)
 	public void verifyLoginWithNoCredentials() {
 		loginpage = new LoginPage(driver);
 		loginpage.clickOnLoginButton();
-		Assert.assertEquals(loginpage.retreiveLoginWarningMessageText(), dataprop.getProperty("loginWarningMessage"));
+		AssertJUnit.assertEquals(loginpage.retreiveLoginWarningMessageText(), dataprop.getProperty("loginWarningMessage"));
 	}
 
 	@Test(priority = 6)
@@ -69,7 +72,7 @@ public class LoginTest extends TestBase {
 		loginpage = new LoginPage(driver);
 		loginpage.enterPassword(configprop.getProperty("validPassword"));
 		loginpage.clickOnLoginButton();
-		Assert.assertEquals(loginpage.retreiveLoginWarningMessageText(), dataprop.getProperty("loginWarningMessage"));
+		AssertJUnit.assertEquals(loginpage.retreiveLoginWarningMessageText(), dataprop.getProperty("loginWarningMessage"));
 	}
 
 	@Test(priority = 7)
@@ -77,7 +80,7 @@ public class LoginTest extends TestBase {
 		loginpage = new LoginPage(driver);
 		loginpage.enterEmail(configprop.getProperty("validEmail"));
 		loginpage.clickOnLoginButton();
-		Assert.assertEquals(loginpage.retreiveLoginWarningMessageText(), dataprop.getProperty("loginWarningMessage"));
+		AssertJUnit.assertEquals(loginpage.retreiveLoginWarningMessageText(), dataprop.getProperty("loginWarningMessage"));
 	}
 
 	@AfterMethod
