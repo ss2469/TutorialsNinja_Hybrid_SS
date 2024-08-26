@@ -84,6 +84,9 @@ public class CompleteCheckoutTest extends TestBase {
 		checkoutpage.clickOnContinueButtonOfDeliveryMethod();
 		checkoutpage.clickOnTermsAndConditionsCheckbox();
 		checkoutpage.clickOnContinueButtonOfPaymentMethod();
+		
+		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.cssSelector("div>#button-confirm"))));
 		checkoutpage.clickOnConfirmOrderButton();
 		Assert.assertTrue(checkoutpage.verifyDisplayOfSuccessMessage());
 	}

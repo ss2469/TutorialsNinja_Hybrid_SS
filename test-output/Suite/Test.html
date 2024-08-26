@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>16/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Aug 13 23:33:19 EDT 2024</td>
+<td>Started on:</td><td>Mon Aug 26 15:12:22 EDT 2024</td>
 </tr>
-<tr><td>Total time:</td><td>319 seconds (319811 ms)</td>
+<tr><td>Total time:</td><td>119 seconds (119828 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,16 +76,15 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.tutorialsninja.testcases.CompleteCheckoutTest.validateCompleteCheckoutWithGuestAccount()'><b>validateCompleteCheckoutWithGuestAccount</b><br>Test class: com.tutorialsninja.testcases.CompleteCheckoutTest</td>
-<td><div><pre>org.openqa.selenium.InvalidSelectorException: invalid selector
-from javascript error: {&quot;status&quot;:32,&quot;value&quot;:&quot;An invalid or illegal selector was specified&quot;}
-  (Session info: chrome=127.0.6533.100)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;div&gt;#button-confirm&quot;}
+  (Session info: chrome=127.0.6533.120)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.4.1&apos;, java.version: &apos;21.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9fc34538127f9dcd35b2d2d7fa19d036, findElement {value=..form-group.required&gt;input[name = &apos;address_1&apos;], using=css selector}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.100, chrome: {chromedriverVersion: 127.0.6533.119 (bdef6783a05..., userDataDir: /var/folders/rj/8t48tqdx4l5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65316}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:65316/devtoo..., se:cdpVersion: 127.0.6533.100, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9fc34538127f9dcd35b2d2d7fa19d036
+Command: [38821392c1f2beb6a7c46406888fe8fa, findElement {using=css selector, value=div&gt;#button-confirm}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.120, chrome: {chromedriverVersion: 127.0.6533.119 (bdef6783a05..., userDataDir: /var/folders/rj/8t48tqdx4l5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53037}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53037/devtoo..., se:cdpVersion: 127.0.6533.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 38821392c1f2beb6a7c46406888fe8fa
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -99,20 +98,19 @@ Session ID: 9fc34538127f9dcd35b2d2d7fa19d036
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy14.sendKeys(Unknown Source)
-	at com.tutorialsninja.pages.CheckoutPage.fillingMandatoryDetailsOfGuestAccount(CheckoutPage.java:190)
-	at com.tutorialsninja.testcases.CompleteCheckoutTest.validateCompleteCheckoutWithGuestAccount(CompleteCheckoutTest.java:73)
-... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1277882374", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1277882374'><pre>org.openqa.selenium.InvalidSelectorException: invalid selector
-from javascript error: {&quot;status&quot;:32,&quot;value&quot;:&quot;An invalid or illegal selector was specified&quot;}
-  (Session info: chrome=127.0.6533.100)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+	at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+	at com.tutorialsninja.pages.CheckoutPage.clickOnConfirmOrderButton(CheckoutPage.java:167)
+	at com.tutorialsninja.testcases.CompleteCheckoutTest.validateCompleteCheckoutWithGuestAccount(CompleteCheckoutTest.java:87)
+... Removed 26 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace263382013", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace263382013'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;div&gt;#button-confirm&quot;}
+  (Session info: chrome=127.0.6533.120)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.4.1&apos;, java.version: &apos;21.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9fc34538127f9dcd35b2d2d7fa19d036, findElement {value=..form-group.required&gt;input[name = &apos;address_1&apos;], using=css selector}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.100, chrome: {chromedriverVersion: 127.0.6533.119 (bdef6783a05..., userDataDir: /var/folders/rj/8t48tqdx4l5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65316}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:65316/devtoo..., se:cdpVersion: 127.0.6533.100, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9fc34538127f9dcd35b2d2d7fa19d036
+Command: [38821392c1f2beb6a7c46406888fe8fa, findElement {using=css selector, value=div&gt;#button-confirm}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 127.0.6533.120, chrome: {chromedriverVersion: 127.0.6533.119 (bdef6783a05..., userDataDir: /var/folders/rj/8t48tqdx4l5...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53037}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53037/devtoo..., se:cdpVersion: 127.0.6533.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 38821392c1f2beb6a7c46406888fe8fa
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -129,9 +127,9 @@ Session ID: 9fc34538127f9dcd35b2d2d7fa19d036
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy14.sendKeys(Unknown Source)
-	at com.tutorialsninja.pages.CheckoutPage.fillingMandatoryDetailsOfGuestAccount(CheckoutPage.java:190)
-	at com.tutorialsninja.testcases.CompleteCheckoutTest.validateCompleteCheckoutWithGuestAccount(CompleteCheckoutTest.java:73)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.click(Unknown Source)
+	at com.tutorialsninja.pages.CheckoutPage.clickOnConfirmOrderButton(CheckoutPage.java:167)
+	at com.tutorialsninja.testcases.CompleteCheckoutTest.validateCompleteCheckoutWithGuestAccount(CompleteCheckoutTest.java:87)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
@@ -156,7 +154,7 @@ Session ID: 9fc34538127f9dcd35b2d2d7fa19d036
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>13</td>
+<td>17</td>
 <td>com.tutorialsninja.testcases.CompleteCheckoutTest@2cf3d63b</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -169,7 +167,7 @@ Session ID: 9fc34538127f9dcd35b2d2d7fa19d036
 <tr>
 <td title='com.tutorialsninja.testcases.CompleteCheckoutTest.validateCompleteCheckoutWithRegisteredAccount()'><b>validateCompleteCheckoutWithRegisteredAccount</b><br>Test class: com.tutorialsninja.testcases.CompleteCheckoutTest</td>
 <td></td>
-<td>19</td>
+<td>10</td>
 <td>com.tutorialsninja.testcases.CompleteCheckoutTest@2cf3d63b</td></tr>
 <tr>
 <td title='com.tutorialsninja.testcases.LoginTest.verifyLoginWithEmptyEmail()'><b>verifyLoginWithEmptyEmail</b><br>Test class: com.tutorialsninja.testcases.LoginTest</td>
@@ -189,7 +187,7 @@ Session ID: 9fc34538127f9dcd35b2d2d7fa19d036
 <tr>
 <td title='com.tutorialsninja.testcases.LoginTest.verifyLoginWithInvalidEmailAndValidPassword()'><b>verifyLoginWithInvalidEmailAndValidPassword</b><br>Test class: com.tutorialsninja.testcases.LoginTest</td>
 <td></td>
-<td>2</td>
+<td>0</td>
 <td>com.tutorialsninja.testcases.LoginTest@2eae8e6e</td></tr>
 <tr>
 <td title='com.tutorialsninja.testcases.LoginTest.verifyLoginWithNoCredentials()'><b>verifyLoginWithNoCredentials</b><br>Test class: com.tutorialsninja.testcases.LoginTest</td>
@@ -224,12 +222,12 @@ Session ID: 9fc34538127f9dcd35b2d2d7fa19d036
 <tr>
 <td title='com.tutorialsninja.testcases.RegisterTest.verifyRegisterWithNoDetails()'><b>verifyRegisterWithNoDetails</b><br>Test class: com.tutorialsninja.testcases.RegisterTest</td>
 <td></td>
-<td>2</td>
+<td>0</td>
 <td>com.tutorialsninja.testcases.RegisterTest@470734c3</td></tr>
 <tr>
 <td title='com.tutorialsninja.testcases.RegisterTest.verifyRegisterWithoutClickingAgreePrivacyPolicy()'><b>verifyRegisterWithoutClickingAgreePrivacyPolicy</b><br>Test class: com.tutorialsninja.testcases.RegisterTest</td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>com.tutorialsninja.testcases.RegisterTest@470734c3</td></tr>
 <tr>
 <td title='com.tutorialsninja.testcases.SearchProductTest.verifySearchWithInvalidProduct()'><b>verifySearchWithInvalidProduct</b><br>Test class: com.tutorialsninja.testcases.SearchProductTest</td>
@@ -239,12 +237,12 @@ Session ID: 9fc34538127f9dcd35b2d2d7fa19d036
 <tr>
 <td title='com.tutorialsninja.testcases.SearchProductTest.verifySearchWithNoProduct()'><b>verifySearchWithNoProduct</b><br>Test class: com.tutorialsninja.testcases.SearchProductTest</td>
 <td></td>
-<td>2</td>
+<td>0</td>
 <td>com.tutorialsninja.testcases.SearchProductTest@8f2ef19</td></tr>
 <tr>
 <td title='com.tutorialsninja.testcases.SearchProductTest.verifySearchWithValidProduct()'><b>verifySearchWithValidProduct</b><br>Test class: com.tutorialsninja.testcases.SearchProductTest</td>
 <td></td>
-<td>1</td>
+<td>0</td>
 <td>com.tutorialsninja.testcases.SearchProductTest@8f2ef19</td></tr>
 </table><p>
 </body>
